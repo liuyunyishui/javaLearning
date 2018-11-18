@@ -16,9 +16,9 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * The field or method to which this annotation is applied can only be accessed
- * when holding a particular lock, which may be a built-in (synchronization) lock,
- * or may be an explicit java.util.concurrent.Lock.
+ * The field or method to which this annotation is applied can only be accessed when holding a
+ * particular lock, which may be a built-in (synchronization) lock, or may be an explicit
+ * java.util.concurrent.Lock.
  *
  * The argument determines which lock guards the annotated field or method:
  * <ul>
@@ -27,7 +27,8 @@ import java.lang.annotation.Target;
  * </li>
  * <li>
  * <code>class-name.this</code> : For inner classes, it may be necessary to disambiguate 'this';
- * the <em>class-name.this</em> designation allows you to specify which 'this' reference is intended
+ * the <em>class-name.this</em> designation allows you to specify which 'this' reference is
+ * intended
  * </li>
  * <li>
  * <code>itself</code> : For reference fields only; the object to which the field refers.
@@ -44,11 +45,13 @@ import java.lang.annotation.Target;
  * <code>method-name()</code> : The lock object is returned by calling the named nil-ary method.
  * </li>
  * <li>
- * <code>class-name.class</code> : The Class object for the specified class should be used as the lock object.
+ * <code>class-name.class</code> : The Class object for the specified class should be used as the
+ * lock object.
  * </li>
  */
 @Target({ElementType.FIELD, ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface GuardedBy {
+
     String value();
 }
